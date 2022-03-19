@@ -1,0 +1,151 @@
+* {
+  padding: 0;
+  margin: 0;
+  background-clip: border-box;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background: aliceblue;
+  position: relative;
+  z-index: -10;
+}
+
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  z-index: -1;
+  border-radius: 0.5rem;
+}
+
+.container {
+  color: aliceblue;
+  width: 400px;
+  margin: 80px auto;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: "Paytone One", sans-serif;
+  font-weight: 100;
+  position: relative;
+}
+.container:hover {
+  /* transform: scale(1.05); */
+  box-shadow: 20px 20px 60px #cf9191, -20px -20px 60px #ffc4c4;
+  transition: all 0.5s linear 0.1s;
+  transform: translateY(-1px);
+}
+.container:not(:hover) {
+  box-shadow: none;
+  transition: all 0.5s linear;
+}
+
+.search-bar {
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 20px;
+  border-bottom: 1px solid rgba(230, 223, 223, 0.7);
+  position: relative;
+}
+
+.search-icon {
+  margin-right: 5px;
+  position: absolute;
+  left: 0;
+}
+.search-icon:hover {
+  color: bisque;
+  transition: all 0.1s linear;
+}
+
+#search-input {
+  border: 0;
+  outline: 0;
+  padding: 3px 3px 3px 3px;
+  background: transparent;
+  height: 30px;
+  color: whitesmoke;
+  font-size: 14px;
+}
+
+#search-input::placeholder {
+  color: rgba(230, 223, 223, 0.6);
+}
+
+.info-wrapper {
+  height: 30vh;
+  padding: 80px 50px;
+  margin-top: 80px;
+}
+.city-name {
+  font-size: 20px;
+  margin-bottom: 3px;
+}
+.weather-state {
+  font-size: 13px;
+}
+.weather-icon {
+  width: 70px;
+  height: 70px;
+}
+.temperature {
+  font-size: 80px;
+  font-weight: lighter;
+  line-height: 1;
+  position: relative;
+}
+.temperature::after {
+  content: "o";
+  position: absolute;
+  font-size: 30px;
+}
+
+.additional-section {
+  border-top: 1px solid whitesmoke;
+  padding: 10px 20px;
+  font-size: 13px;
+  margin-top: 80px;
+}
+
+.additional-section .row {
+  margin-bottom: 5px;
+  display: flex;
+}
+.additional-section .item {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.additional-section .item .value {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+.microphone {
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+}
+.microphone.recording .fa-microphone {
+  animation: record 1.4s infinite linear;
+}
+
+.microphone .fa-microphone:hover {
+  color: bisque;
+  transition: all 0.1s linear;
+}
+
+@keyframes record {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0.1;
+  }
+}
